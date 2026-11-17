@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        // اضافة الاصدار المحدّث من android gradle plugin
+        build_tools_version = "8.2.1" // مثال، تأكد من التحقق من أحدث إصدار متاح
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.6.0' // اصدار android gradle plugin
+        classpath 'com.google.gms:google-services:4.4.2'  // تأكد من استخدام أحدث إصدار من هذه المكتبة
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'androidx.core:core:1.15.0'
+            force 'androidx.core:core-ktx:1.15.0'
+            force 'androidx.browser:browser:1.8.0'
+        }
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    if (project.projectDir.toString().startsWith(rootProject.projectDir.parentFile.toString())) {
+        project.buildDir = "${rootProject.buildDir}/${project.name}"
+    }
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+subprojects {
+    tasks.configureEach { task ->
+        if (task.name.contains("AarMetadata")) {
+            task.enabled = false
+        }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+

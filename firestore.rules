@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // قراءة المناهج والدروس والكتب والإعلانات متاحة لجميع مستخدمي المنصة (الويب والهاتف)
+    match /curriculum_updates/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /programs/{progId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /library_items/{itemId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /media_items/{itemId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /app_config/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    // تقدم الطالب وملاحظاته الخاصة
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

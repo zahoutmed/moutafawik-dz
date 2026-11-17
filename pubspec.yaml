@@ -1,0 +1,222 @@
+name: i_love_philosophy
+description: "منصة المتفوّق الجزائري (Moutafawik DZ) لكافة الأطوار والمناهج التعليمية الجزائرية"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_pdfview: ^1.3.4
+  font_awesome_flutter: ^10.8.0
+  syncfusion_flutter_pdfviewer: ^28.1.33
+  curved_navigation_bar: ^1.0.6
+  animated_text_kit: ^4.2.2
+  animations: ^2.0.6
+  flutter_native_splash: ^2.2.17
+  provider: ^6.1.2
+  http: ^1.2.2
+  google_sign_in: ^6.2.2
+  firebase_auth: ^5.3.4
+  firebase_core: ^3.8.1
+  cloud_firestore: ^5.6.0
+  flutter_local_notifications: ^18.0.1
+  flutter_recaptcha_v2_compat: ^1.0.5
+  logger: ^2.5.0
+  shared_preferences: ^2.3.4
+  flutter_launcher_icons: ^0.14.1
+  sign_in_with_apple: ^6.1.3
+  url_launcher: ^6.3.1
+  flutter_colorpicker: ^1.1.0
+  cached_network_image: ^3.4.1
+  loading_animation_widget: ^1.3.0
+  video_player: ^2.9.2
+  flutter_cache_manager: ^3.4.1
+ # facebook_auth: ^0.0.3
+ # flutter_facebook_auth: ^7.1.1
+  page_transition: ^2.1.0
+  pdf: ^3.11.1
+  google_fonts: ^6.2.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"
+  min_sdk_android: 23
+
+flutter_native_splash:
+  color: "#1B0B3B"
+  image: assets/images/app_logo_moutafawik.png
+  android: true
+  ios: true
+  web: true
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+dependency_overrides:
+  archive: ^4.7.1
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+  - assets/images/background.png
+  - assets/images/background1.png
+  - assets/images/background2.jpg
+  - assets/images/background3.jpg
+  - assets/images/background4.jpg
+  - assets/images/background5.jpg
+  - assets/images/course01.png
+  - assets/images/course02.png
+  - assets/images/course03.png
+  - assets/images/image.png
+  - assets/images/logophilo.png
+  - assets/images/progress.png
+  - assets/images/splash_logo.png
+  - assets/images/lesson1.jpg
+  - assets/images/lesson2.jpg
+  - assets/images/lesson3.jpg
+  - assets/images/lesson4.jpg
+  - assets/images/lesson5.jpg
+  - assets/images/splash_background.jpg
+  - assets/images/splash_background2.jpg
+  - assets/images/welcome_background.jpg
+  - assets/images/login_background.png
+  - assets/images/signup_background.jpg
+  - assets/images/bg_home_card.jpg
+  - assets/images/bg_home_card1.jpg
+  - assets/images/cours.jpeg
+  - assets/images/books-library.jpg
+  - assets/images/video_list.jpg
+  - assets/images/exam.jpg
+  - assets/images/book_cover.png
+  - assets/images/login_background.jpg
+  - assets/images/text01.png
+  - assets/images/video1.png
+  - assets/images/bg2.jpg
+  - assets/images/Kierkegaard.jpeg
+  - assets/images/Kant.jpg
+  - assets/images/Russell.jpg
+  - assets/images/Sartre.jpg
+  - assets/images/teacher1.png
+  - assets/images/student1.png
+  - assets/images/student2.png
+  - assets/images/student3.png
+  - assets/images/student4.png
+  
+  # Unused large videos excluded from bundle to reduce APK size (~28.5 MB saved)
+  # - assets/videos/video1.mp4
+  # - assets/videos/bgvideo.mp4
+  
+
+
+
+  - assets/icons/apple.png
+  - assets/icons/avatar01.png
+  - assets/icons/avatar02.png
+  - assets/icons/bookmark.png
+  - assets/icons/calendar.png
+  - assets/icons/facebook.png
+  - assets/icons/google.png
+  - assets/icons/grid.png
+  - assets/icons/icon.png
+  - assets/icons/list.png
+  - assets/icons/notification.png
+  - assets/icons/search.png
+  - assets/icons/user.png
+  - assets/icons/arabic.png
+  - assets/icons/art.png
+  - assets/icons/chimi.png
+  - assets/icons/civic.png
+  - assets/icons/civil.png
+  - assets/icons/deutsch.png
+  - assets/icons/droit.png
+  - assets/icons/eco.png
+  - assets/icons/elect.png
+  - assets/icons/english.png
+  - assets/icons/espanol.png
+  - assets/icons/french.png
+  - assets/icons/gestion.png
+  - assets/icons/his_geo.png
+  - assets/icons/informatique.png
+  - assets/icons/islamic.png
+  - assets/icons/italian.png
+  - assets/icons/math.png
+  - assets/icons/mecanical.png
+  - assets/icons/music.png
+  - assets/icons/philo.png
+  - assets/icons/physics.png
+  - assets/icons/science.png
+  - assets/icons/sport.png
+  - assets/icons/tamazight.png
+  - assets/icons/tech.png
+  - assets/icons/y_1_300.png
+  - assets/icons/y_2_300.png
+  - assets/icons/y_3_300.png
+  - assets/icons/y_4_300.png
+  - assets/icons/y_5_300.png
+  - assets/icons/q.png
+
+
+  - assets/pdfs/lesson01.pdf
+  - assets/pdfs/lesson02.pdf
+  - assets/pdfs/lesson03.pdf
+  - assets/pdfs/lesson04.pdf
+  - assets/pdfs/lesson05.pdf
+  - assets/pdfs/lesson06.pdf
+  - assets/pdfs/lesson07.pdf
+  - assets/pdfs/lesson08.pdf
+  - assets/pdfs/lesson10.pdf
+  - assets/pdfs/lesson11.pdf
+  - assets/pdfs/lesson12.pdf
+
+
+  fonts:
+  - family: Amiri
+    fonts:
+    - asset: assets/fonts/Amiri-BoldItalic.ttf
+    - asset: assets/fonts/Amiri-Regular.ttf
+    - asset: assets/fonts/Amiri-Italic.ttf
+    - asset: assets/fonts/Amiri-Bold.ttf
+  - family: Cairo
+    fonts:
+    - asset: assets/fonts/Cairo-Black.ttf
+    - asset: assets/fonts/Cairo-ExtraBold.ttf
+    - asset: assets/fonts/Cairo-Bold.ttf
+    - asset: assets/fonts/Cairo-ExtraLight.ttf
+    - asset: assets/fonts/Cairo-Light.ttf
+    - asset: assets/fonts/Cairo-Medium.ttf
+    - asset: assets/fonts/Cairo-Regular.ttf
+    - asset: assets/fonts/Cairo-SemiBold.ttf
+    - asset: assets/fonts/Cairo-VariableFont_slnt,wght.ttf
+  - family: Lateef
+    fonts:
+    - asset: assets/fonts/Lateef-Bold.ttf
+    - asset: assets/fonts/Lateef-ExtraBold.ttf
+    - asset: assets/fonts/Lateef-ExtraLight.ttf
+    - asset: assets/fonts/Lateef-Light.ttf
+    - asset: assets/fonts/Lateef-Medium.ttf
+    - asset: assets/fonts/Lateef-Regular.ttf
+    - asset: assets/fonts/Lateef-SemiBold.ttf
+  - family: MaterialIcons
+    fonts:
+    - asset: assets/fonts/MaterialIcons-Regular.otf
+  - family: ReemKufiFun
+    fonts:
+    - asset: assets/fonts/ReemKufiFun-Bold.ttf
+    - asset: assets/fonts/ReemKufiFun-Medium.ttf
+    - asset: assets/fonts/ReemKufiFun-Regular.ttf
+    - asset: assets/fonts/ReemKufiFun-SemiBold.ttf
+    - asset: assets/fonts/ReemKufiFun-VariableFont_wght.ttf
