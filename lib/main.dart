@@ -63,37 +63,6 @@ class ILovePhilosophy extends StatelessWidget {
             title: 'المتفوّق الجزائري - Moutafawik DZ',
             debugShowCheckedModeBanner: false,
             builder: (context, child) {
-              final media = MediaQuery.of(context);
-              // On web or desktop preview screens with large displays, center comfortably.
-              // On native mobile devices (Android/iOS, such as realme 11 pro), render 100% full screen with native responsiveness.
-              if (kIsWeb && media.size.width > 600) {
-                const mobileWidth = 450.0;
-                return Container(
-                  color: const Color(0xFF1E1E2C),
-                  alignment: Alignment.center,
-                  child: Container(
-                    width: mobileWidth,
-                    height: media.size.height,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black45,
-                          blurRadius: 25,
-                          spreadRadius: 2,
-                        ),
-                      ],
-                    ),
-                    clipBehavior: Clip.antiAlias,
-                    child: MediaQuery(
-                      data: media.copyWith(
-                        size: Size(mobileWidth, media.size.height),
-                      ),
-                      child: child ?? const SizedBox.shrink(),
-                    ),
-                  ),
-                );
-              }
               return child ?? const SizedBox.shrink();
             },
             theme: isDarkMode
