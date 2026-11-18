@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:i_love_philosophy/screens/home_screen.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class ActivationScreen extends StatefulWidget {
   const ActivationScreen({super.key});
@@ -73,7 +74,7 @@ class _ActivationScreenState extends State<ActivationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(

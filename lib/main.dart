@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:i_love_philosophy/firebase_options.dart';
 import 'package:i_love_philosophy/services/curriculum_sync_service.dart';

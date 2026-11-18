@@ -5,6 +5,7 @@ import 'package:i_love_philosophy/screens/outils/custom_drawer.dart';
 import 'package:i_love_philosophy/screens/outils/study_progress_service.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
 import 'package:i_love_philosophy/widgets/program_filter_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   final SubjectProgram? program;
@@ -38,7 +39,7 @@ class ActivitiesScreenState extends State<ActivitiesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
     final quizzes = _activeProgram.quizzes;
 
     return Directionality(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:i_love_philosophy/screens/outils/custom_drawer.dart';
 import 'package:i_love_philosophy/screens/outils/study_progress_service.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class StudyCompanionScreen extends StatefulWidget {
   final int initialTab;
@@ -151,7 +152,7 @@ class _StudyCompanionScreenState extends State<StudyCompanionScreen>
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
 
     return Directionality(
       textDirection: TextDirection.rtl,

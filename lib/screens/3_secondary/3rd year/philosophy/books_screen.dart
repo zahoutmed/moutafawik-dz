@@ -5,6 +5,7 @@ import 'package:i_love_philosophy/models/education_models.dart';
 import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/book_detail_screen.dart';
 import 'package:i_love_philosophy/screens/outils/custom_drawer.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class BooksScreen extends StatefulWidget {
   final SubjectProgram? program;
@@ -28,7 +29,7 @@ class _BooksScreenState extends State<BooksScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
 
     // جلب الكتب من المكتبة الشاملة (100+ كتاب رسمي وحولية)
     List<LibraryItemData> baseItems;

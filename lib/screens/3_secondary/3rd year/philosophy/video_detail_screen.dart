@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i_love_philosophy/utils/security_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class VideoDetailScreen extends StatefulWidget {
   final Map<String, dynamic> video;
@@ -138,7 +139,7 @@ class VideoDetailScreenState extends State<VideoDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
     final title = (widget.video['title'] ?? 'تفاصيل الشرح المرئي').toString();
     final author = (widget.video['author'] ?? '').toString();
     final desc = (widget.video['desc'] ?? '').toString();

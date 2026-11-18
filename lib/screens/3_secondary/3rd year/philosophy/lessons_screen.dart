@@ -8,6 +8,7 @@ import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/lesson
 import 'package:i_love_philosophy/utils/curriculum_filter_helper.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
 import 'package:i_love_philosophy/widgets/program_filter_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class LessonsScreen extends StatefulWidget {
   final SubjectProgram? program;
@@ -55,7 +56,7 @@ class LessonsScreenState extends State<LessonsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
     final availableLevels = CurriculumFilterHelper.extractAvailableLevels(_activeProgram.lessons);
     final levelChoices = availableLevels.length > 1 ? ['الكل', ...availableLevels] : availableLevels;
     if (!levelChoices.contains(_selectedLevel) && levelChoices.isNotEmpty) {

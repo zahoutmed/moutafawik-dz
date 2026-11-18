@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:i_love_philosophy/utils/security_utils.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class User {
   final String username;
@@ -111,7 +112,7 @@ class UserPreferencesScreenState extends State<UserPreferencesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
 
     return Scaffold(
       appBar: AppBar(

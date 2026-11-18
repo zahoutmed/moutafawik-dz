@@ -8,6 +8,7 @@ import 'package:i_love_philosophy/screens/user_preferences_screen.dart';
 import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/videos_screen.dart';
 import 'package:i_love_philosophy/screens/outils/settings_screen.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({super.key});
@@ -86,8 +87,8 @@ class AboutUsScreenState extends State<AboutUsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = ResponsiveUI.fontBasis(context);
+    final screenHeight = ResponsiveUI.heightBasis(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

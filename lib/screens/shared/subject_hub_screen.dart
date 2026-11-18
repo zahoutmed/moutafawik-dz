@@ -11,6 +11,7 @@ import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/books_
 import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/videos_screen.dart';
 import 'package:i_love_philosophy/utils/curriculum_filter_helper.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class SubjectHubScreen extends StatefulWidget {
   final String title;
@@ -82,7 +83,7 @@ class _SubjectHubScreenState extends State<SubjectHubScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
 
     return Directionality(
       textDirection: TextDirection.rtl,
@@ -124,9 +125,11 @@ class _SubjectHubScreenState extends State<SubjectHubScreen> {
               fit: BoxFit.cover,
             ),
           ),
-          child: ListView(
-            padding: const EdgeInsets.all(14),
-            children: [
+          child: ResponsiveUI.constrainBody(
+            maxWidth: 1100,
+            child: ListView(
+              padding: const EdgeInsets.all(14),
+              children: [
               // بطاقة تعريفية بالمادة أو الشعبة
               Card(
                 elevation: 6,
@@ -190,14 +193,16 @@ class _SubjectHubScreenState extends State<SubjectHubScreen> {
                 ),
               ),
               const SizedBox(height: 14),
-              // أزرار الوصول السريع للأقسام الأربعة + رفيق التفوق
-              GridView.count(
-                crossAxisCount: 2,
+              // أزرار الوصول السريع للأقسام الأربعة بارتفاع معياري ثابت ومتجاوب
+              GridView(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 270,
+                  mainAxisExtent: 50,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                childAspectRatio: 2.4,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
                 children: [
                   _buildQuickAction(
                     'الدروس والملخصات (${_program.lessons.length})',
@@ -366,7 +371,8 @@ class _SubjectHubScreenState extends State<SubjectHubScreen> {
             ],
           ),
         ),
-        bottomNavigationBar: AppBottomNavBar(
+      ),
+      bottomNavigationBar: AppBottomNavBar(
           currentIndex: 1,
           currentProgram: _program,
         ),

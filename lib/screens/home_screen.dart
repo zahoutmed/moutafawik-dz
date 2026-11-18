@@ -13,6 +13,7 @@ import 'package:i_love_philosophy/screens/shared/pedagogical_hub_screen.dart';
 import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/books_screen.dart';
 import 'package:i_love_philosophy/screens/3_secondary/3rd year/philosophy/videos_screen.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,8 +27,8 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = ResponsiveUI.fontBasis(context);
+    final screenHeight = ResponsiveUI.heightBasis(context);
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
@@ -261,40 +262,39 @@ class HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                final isWide = constraints.maxWidth > 600;
-                return GridView.count(
-                  reverse: true,
-                  crossAxisCount: isWide ? 4 : 2,
-                  childAspectRatio: isWide ? 1.05 : 0.95,
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    _buildStageCard(
-                        'التعليم التحضيري',
-                        'assets/images/student1.png',
-                        Colors.blueGrey,
-                        const HomePreparatory()),
-                    _buildStageCard(
-                        'التعليم الابتدائي',
-                        'assets/images/student2.png',
-                        Colors.redAccent,
-                        const HomePrimary()),
-                    _buildStageCard(
-                        'التعليم المتوسط',
-                        'assets/images/student3.png',
-                        Colors.greenAccent,
-                        const HomeMiddle()),
-                    _buildStageCard(
-                        'التعليم الثانوي',
-                        'assets/images/student4.png',
-                        Colors.yellowAccent,
-                        const HomeSecondary()),
-                  ],
-                );
-              },
+            GridView(
+              reverse: true,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 265,
+                mainAxisExtent: 195,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                _buildStageCard(
+                    'التعليم التحضيري',
+                    'assets/images/student1.png',
+                    Colors.blueGrey,
+                    const HomePreparatory()),
+                _buildStageCard(
+                    'التعليم الابتدائي',
+                    'assets/images/student2.png',
+                    Colors.redAccent,
+                    const HomePrimary()),
+                _buildStageCard(
+                    'التعليم المتوسط',
+                    'assets/images/student3.png',
+                    Colors.greenAccent,
+                    const HomeMiddle()),
+                _buildStageCard(
+                    'التعليم الثانوي',
+                    'assets/images/student4.png',
+                    Colors.yellowAccent,
+                    const HomeSecondary()),
+              ],
             ),
 /*----------------------------------------------------------------------------*/
             const Padding(

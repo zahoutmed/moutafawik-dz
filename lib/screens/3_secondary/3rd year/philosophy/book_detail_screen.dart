@@ -4,6 +4,7 @@ import 'package:i_love_philosophy/screens/outils/study_progress_service.dart';
 import 'package:i_love_philosophy/utils/lesson_pdf_generator.dart';
 import 'package:i_love_philosophy/utils/security_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class BookDetailScreen extends StatefulWidget {
   final Map<String, dynamic> book;
@@ -44,7 +45,7 @@ class _BookDetailScreenState extends State<BookDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
     final title = (widget.book['title'] ?? 'تفاصيل المرجع').toString();
     final author = (widget.book['author'] ?? '').toString();
     final desc = (widget.book['desc'] ?? '').toString();

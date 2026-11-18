@@ -9,6 +9,7 @@ import 'package:i_love_philosophy/screens/outils/study_companion_screen.dart';
 import 'package:i_love_philosophy/screens/shared/stream_subject_navigator_screen.dart';
 import 'package:i_love_philosophy/screens/shared/subject_hub_screen.dart';
 import 'package:i_love_philosophy/widgets/app_bottom_nav_bar.dart';
+import 'package:i_love_philosophy/utils/responsive_ui.dart';
 
 class HomeSecondary extends StatefulWidget {
   const HomeSecondary({super.key});
@@ -22,8 +23,8 @@ class HomeSecondaryState extends State<HomeSecondary> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = ResponsiveUI.fontBasis(context);
+    final screenHeight = ResponsiveUI.heightBasis(context);
 
     return Scaffold(
 //-----------------------------------------------------------------------------//
@@ -551,9 +552,14 @@ class HomeSecondaryState extends State<HomeSecondary> {
                 ),
               ),
             ),
-            GridView.count(
+            GridView(
               reverse: true,
-              crossAxisCount: 3,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 175,
+                mainAxisExtent: 140,
+                crossAxisSpacing: 6,
+                mainAxisSpacing: 6,
+              ),
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               children: [
@@ -644,9 +650,14 @@ class HomeSecondaryState extends State<HomeSecondary> {
                 ),
               ),
             ),
-            GridView.count(
+            GridView(
               reverse: true,
-              crossAxisCount: 3,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 175,
+                mainAxisExtent: 140,
+                crossAxisSpacing: 6,
+                mainAxisSpacing: 6,
+              ),
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
@@ -695,9 +706,14 @@ class HomeSecondaryState extends State<HomeSecondary> {
                 ),
               ),
             ),
-            GridView.count(
+            GridView(
               reverse: true,
-              crossAxisCount: 3,
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 175,
+                mainAxisExtent: 140,
+                crossAxisSpacing: 6,
+                mainAxisSpacing: 6,
+              ),
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
@@ -772,7 +788,7 @@ class HomeSecondaryState extends State<HomeSecondary> {
 //-----------------------------------------------------------------------------//
   Widget _buildStageCard(String title, String imagePath, Color color,
       Widget screen, double fontSize) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = ResponsiveUI.fontBasis(context);
 
     return Card(
       color: color,
@@ -917,8 +933,8 @@ class HomeSecondaryState extends State<HomeSecondary> {
 //-----------------------------------------------------------------------------//
   Widget _buildServiceCard(
       String title, String description, IconData icon, Widget nextScreen) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = ResponsiveUI.fontBasis(context);
+    final screenHeight = ResponsiveUI.heightBasis(context);
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: screenHeight * 0.002, vertical: screenHeight * 0.002),
@@ -958,8 +974,8 @@ class HomeSecondaryState extends State<HomeSecondary> {
 //-----------------------------------------------------------------------------//
   Widget _buildYearsCard(
       String title, String imagePath, Color color, Widget screen) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = ResponsiveUI.fontBasis(context);
+    final screenHeight = ResponsiveUI.heightBasis(context);
 
     return Card(
       color: color,
